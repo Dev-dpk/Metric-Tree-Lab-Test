@@ -74,8 +74,8 @@ class AuthController extends Controller
             JWTAuth::parseToken()->invalidate( $token );
 
             return response()->json( [
-                'error'   => false,
-                'message' => trans( 'auth.logged_out' )
+                'error'   => true,
+                'message' => 'Logged out successfully'
             ] );
         } catch ( TokenExpiredException $exception ) {
             return response()->json( [
